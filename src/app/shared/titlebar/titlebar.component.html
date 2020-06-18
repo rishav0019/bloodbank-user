@@ -1,0 +1,37 @@
+<header class="main-header">
+  <div>
+    <a href="index.html" class="main-header__brand">
+      <img src="../../../assets/image/logo.png" alt="Blood Bank" />
+    </a>
+    <!-- <p>
+      A social initiative of Maa Vaishno Devi Seva Samiti(Bihar)
+    </p> -->
+  </div>
+  <div class="tagline">
+    <h4>“Your little effort can give others second chance to live life.”</h4>
+  </div>
+  <nav class="main-nav">
+    <ul class="main-nav__items">
+      <li class="main-nav__item">
+        <a href="customers/index.html">About Us</a>
+      </li>
+      <li class="main-nav__item">
+        <a href="customers/index.html">Bloodbank Number</a>
+      </li>
+      <li class="main-nav__item">
+        <a href="packages/index.html">Contact us</a>
+      </li>
+      <li class="main-nav__item">
+        <a href="event/index.html">Upcoming Events</a>
+      </li>
+      <li class="main-nav__item main-nav__item--cta">
+        <a (click)="login()" routerLinkActive="active-route">DONOR LOGIN </a>
+      </li>
+      <li class="main-nav__item main-nav__item--cta">
+        <a [routerLink]="'/dashboard/doners'" routerLinkActive="active-route"
+          >Dashboard
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

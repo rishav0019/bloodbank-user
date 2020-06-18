@@ -1,0 +1,40 @@
+<div class="dashboard-container">
+  <div class="row">
+
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link routerLink="doners" routerLinkActive="active">
+        <span matBadgeOverlap="false">Doners
+
+          <mat-icon matBadge="15" matBadgeColor="warn">group</mat-icon>
+        </span>
+      </a>
+
+      <a mat-tab-link routerLink="requests" routerLinkActive="active">
+        <span matBadgeColor="warn" matBadgeOverlap="false">Requests
+          <mat-icon matBadge="15" matBadgeColor="warn">invert_colors</mat-icon>
+        </span>
+      </a>
+
+      <a mat-tab-link routerLink="doners" routerLinkActive="active">
+        <span matBadgeColor="warn" matBadgeOverlap="false">My Donation History
+
+        </span>
+        <mat-icon matBadge="15" matBadgeColor="warn">invert_colors</mat-icon>
+      </a>
+
+      <a mat-tab-link routerLink="my-profile" routerLinkActive="active">
+        <span matBadgeColor="warn" matBadgeOverlap="false">my Profile
+
+        </span>
+
+      </a>
+    </nav>
+  </div>
+
+</div>
+<!-- <hr> -->
+<div class="row ">
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>

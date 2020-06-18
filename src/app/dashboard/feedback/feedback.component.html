@@ -1,0 +1,87 @@
+<!-- <p>feedback works!</p> -->
+<div class="my-feedback">
+  <div class="row">
+    <div class="col center">
+      <h1>Feedback</h1>
+      <hr />
+    </div>
+  </div>
+
+  <form [formGroup]="feedbackForm" class="my-form">
+    <div class="row">
+      <div class="col-sm-12">
+        <mat-toolbar>
+          <!-- <div class="row"> -->
+          <div class="col-sm-12 center">
+            We Would Like Your feedback to improve Our service
+          </div>
+        </mat-toolbar>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-toolbar>
+          <!-- <div class="row"> -->
+          <div class="col-sm-12">
+            <!-- what is your opinion of this service? -->
+          </div>
+        </mat-toolbar>
+      </div>
+      <!-- [hoverEnabled]="true" -->
+      <div class="col-md-6">
+        <div class="form-box">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input
+              matInput
+              placeholder="abc@example.com"
+              formControlName="email"
+            />
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error></mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-box">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your Name</mat-label>
+            <input matInput formControlName="name" />
+            <mat-icon matSuffix>account_box</mat-icon>
+            <mat-error></mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-box">
+          <mat-form-field appearance="fill" class="text-area">
+            <mat-label>Textarea</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-box">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your Mobile No.</mat-label>
+            <input matInput formControlName="mobile" />
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-error></mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col submit-button">
+        <button mat-button>Basic</button>
+      </div>
+    </div>
+  </form>
+</div>

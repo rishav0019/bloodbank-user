@@ -1,0 +1,138 @@
+<div class="my-container">
+  <div class="row">
+    <div class="col center">
+      <h3>My Profile</h3>
+      <hr>
+    </div>
+  </div>
+  <form [formGroup]="profileUpdateForm" (ngSubmit)=" OnSubmit()" class="my-form">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-box">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your Name</mat-label>
+            <input matInput formControlName="name">
+            <mat-icon matSuffix>account_box</mat-icon>
+            <mat-error *ngIf="f.name.errors?.required">Please Enter Your name</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-box">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your Mobile No.</mat-label>
+            <input matInput formControlName="mobile">
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-error *ngIf="f.mobile.errors?.required">Please Enter Mobile No.</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="form-box">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="abc@example.com" formControlName="email">
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-error *ngIf="f.email.errors?.required">Please Enter Your Email Number</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-box">
+              <mat-form-field appearance="fill" class="width-100 select-box">
+                <mat-label>Select Blood Group</mat-label>
+                <mat-select formControlName="bloodGroup">
+                  <mat-option value="option">O+</mat-option>
+                  <mat-option value="option">O-</mat-option>
+                  <mat-option value="option">A+</mat-option>
+                  <mat-option value="option">A-</mat-option>
+                  <mat-option value="option">B+</mat-option>
+                  <mat-option value="option">B-</mat-option>
+                  <mat-option value="option">AB+</mat-option>
+                  <mat-option value="option">AB-</mat-option>
+
+                </mat-select>
+                <mat-error *ngIf="f.bloodGroup.errors?.required">Please Select Blood Group</mat-error>
+              </mat-form-field>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-box">
+
+              <mat-radio-group class="width-100" formControlName="gender">
+                <mat-radio-button color="warn" value="auto">Male</mat-radio-button>
+                <mat-radio-button color="warn" value="always">Female</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="submitted && f.gender.errors?.required">Please Select Gender</mat-error>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 form-box">
+        <mat-form-field class="example-full-width">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+          <mat-error *ngIf="f.date.errors?.required">Please Select Date</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-3">
+
+      </div>
+      <div class="col-sm-3">
+        <div class="form-box">
+          <mat-form-field appearance="fill" class="width-100 select-box">
+            <mat-label>Select State</mat-label>
+            <mat-select formControlName="state">
+              <mat-option value="option">Bihar</mat-option>
+              <!-- <mat-option value="option">Chhatishgarth</mat-option> -->
+
+
+            </mat-select>
+            <mat-error *ngIf="f.state.errors?.required">Please Select State</mat-error>
+          </mat-form-field>
+
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-box">
+          <mat-form-field appearance="fill" class="width-100 select-box">
+            <mat-label>Select District</mat-label>
+            <mat-select formControlName="district">
+              <mat-option value="option">Patna</mat-option>
+              <mat-option value="option">Chhapra</mat-option>
+
+
+            </mat-select>
+            <mat-error *ngIf="f.district.errors?.required">Please Select District</mat-error>
+          </mat-form-field>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <mat-slide-toggle color="warn" formControlName="contactdetailVisible">Contact Details Visible
+        </mat-slide-toggle>
+
+      </div>
+      <div class="col-sm-3">
+        <mat-slide-toggle color="warn" formControlName="registerAsDoner">Register As Doner</mat-slide-toggle>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col submit-button">
+        <button mat-button>Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,51 @@
+.doner-container {
+  min-height: calc(100vh);
+  // margin-left: 200px;
+  // margin-right: 200px;
+}
+
+.example-card {
+  // max-width: 400px;
+}
+
+.example-header-image {
+  background-color: #F44336;
+  background-size: cover;
+}
+
+label {
+  display: block;
+}
+
+.description {
+  font-size: small;
+  margin-right: 12px;
+}
+
+.details {
+  display: block;
+  font-size: small;
+  color: rgb(175, 170, 170);
+}
+
+mat-panel-description {
+  // height: 48px;
+  padding: 12px;
+
+}
+
+mat-card {
+  margin-bottom: 10px;
+}
+
+.comment {
+  margin-left: 12px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.bloodgroup {
+  color: #F44336;
+}
