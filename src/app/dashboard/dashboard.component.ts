@@ -6,36 +6,17 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./dashboard.component.scss"],
 })
 export class DashboardComponent implements OnInit {
-  navLinks;
+  links = [
+    { name: "Doners", link: "doners" },
+    { name: "Requests", link: "requests" },
+    { name: "My Donation History", link: "doners" },
+    { name: "Profile", link: "my-profile" },
+  ];
+  activeLink;
+
   constructor() {}
 
   ngOnInit() {
-    this.navLinks = [
-      {
-        label: "About-Us",
-        link: "about-us",
-        index: 0,
-      },
-      {
-        label: "Bloodbank Number",
-        link: "phone-number",
-        index: 1,
-      },
-      {
-        label: "Blood Donation Eligibility",
-        link: "eligibility",
-        index: 2,
-      },
-      {
-        label: "Important Links",
-        link: "./tabtest3",
-        index: 3,
-      },
-      {
-        label: "Donor Vs Receiver",
-        link: "./tabtest3",
-        index: 4,
-      },
-    ];
+    this.activeLink = this.links[0].name;
   }
 }

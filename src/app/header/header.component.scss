@@ -1,35 +1,12 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-}
-
-main {
-  min-height: calc(100vh - 3.5rem - 8rem);
-  margin-top: 3.5rem;
-}
-
-
-
 .main-header {
-  margin-left: 100px;
-  margin-right: 100px;
-  // width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: black;
-  padding: 0.5rem 1rem;
-  z-index: 1000;
+  width: 100%;
+  background: white;
+  z-index: 100;
+  padding: 1rem 5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.main-header>div {
-  display: inline-block;
-  vertical-align: middle;
-}
+
 
 .main-header__brand {
   color: #FFBF80;
@@ -51,13 +28,10 @@ main {
   /* width: 100%; */
 }
 
-.main-nav {
-  display: none;
-}
 
 .main-nav__items {
-  margin: 0;
-  padding: 0;
+  // margin: 0;
+  // padding: 0;
   list-style: none;
 }
 
@@ -69,22 +43,22 @@ main {
 .main-nav__item a,
 .mobile-nav__item a {
   text-decoration: none;
-  color: #FF0000;
+  color: #585858;
   font-weight: bold;
   padding: 0.2rem 0;
 }
 
 .main-nav__item a:hover,
 .main-nav__item a:active {
-  color: white;
-  border-bottom: 5px solid white;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .main-nav__item--cta a,
 .mobile-nav__item--cta a {
-  color: white;
-  background: #FF4040;
-  padding: 0.5rem 1rem;
+  color: #e53935;
+  background: white;
+  padding: 0.5rem 0.5rem;
   border-radius: 8px;
 }
 
@@ -92,9 +66,8 @@ main {
 .main-nav__item--cta a:active,
 .mobile-nav__item--cta a:hover,
 .mobile-nav__item--cta a:active {
-  color: #FF0000;
-  background: white;
-  // border: none;
+  color: white;
+  background: #e53935;
 }
 
 .active-route {
@@ -102,6 +75,18 @@ main {
   // padding: 0;
   border: 2px solid white;
 }
+
+.top-header {
+  padding: 0.75rem;
+  width: 100%;
+  text-align: center;
+  background-color: #e53935;
+
+  span {
+    color: #fff;
+  }
+}
+
 
 @media (min-width: 40rem) {
   .toggle-button {
@@ -111,7 +96,6 @@ main {
   .main-nav {
     display: inline-block;
     text-align: right;
-    width: calc(100% - 44px);
     vertical-align: middle;
   }
 }

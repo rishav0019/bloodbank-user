@@ -1,11 +1,8 @@
-// .navbar-brand {
-//   color: white;
-// }
 .main-container {
+  background-color: #fff;
+}
 
-  margin-left: 100px;
-  margin-right: 100px;
-  min-height: calc(100vh);
-  // margin-top: 3.5rem;
-
+.router-container {
+  padding: 0 4rem;
+  z-index: 10;
 }

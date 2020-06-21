@@ -1,0 +1,59 @@
+<header class="top-header">
+  <span>This is a top header for additional info.</span>
+</header>
+<header class="main-header">
+
+  <div class="row align-items-end">
+    <div class="col-xl-3">
+      <a href="index.html" class="main-header__brand">
+        <img src="../../../assets/image/logo.png" alt="Blood Bank" />
+      </a>
+    </div>
+    <div class="col-xl-6">
+
+      <nav class="main-nav">
+        <ul class="main-nav__items">
+          <li class="main-nav__item">
+            <a [href]="['/about-us']">About Us</a>
+          </li>
+          <li class="main-nav__item">
+            <a [href]="['/phone-number']">Bloodbank Numbers</a>
+          </li>
+          <li class="main-nav__item">
+            <a [href]="['/about-us']">Upcoming Events</a>
+          </li>
+          <li class="main-nav__item">
+            <a [href]="['/about-us']">Gallery</a>
+          </li>
+          <li class="main-nav__item">
+            <a [href]="['/about-us']">Contact us</a>
+          </li>
+
+
+        </ul>
+      </nav>
+
+    </div>
+    <div class="col-xl-3">
+      <nav class="main-nav">
+        <ul class="main-nav__items">
+          <li class="main-nav__item main-nav__item--cta">
+            <a (click)="login()" routerLinkActive="active-route">Donor Login </a>
+          </li>
+          <li class="main-nav__item main-nav__item--cta">
+            <a [routerLink]="'/dashboard/doners'" routerLinkActive="active-route">Dashboard
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+
+
+
+
+</header>

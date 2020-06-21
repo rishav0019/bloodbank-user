@@ -1,36 +1,17 @@
 .dashboard-container {
-  margin-top: 100px;
-  padding: 0 20px;
+  margin-top: 2rem;
+  padding: 0 2rem;
 
-}
+  nav {
+    text-decoration: none;
+    width: 100%;
+
+    a {
+      color: #585858;
+      text-decoration: none;
+      padding: 20px;
+    }
+  }
 
 
-nav {
-  text-decoration: none;
-  background-color: #F44336;
-  // height: 70px;
-  width: 100%;
-}
-
-nav a {
-  text-decoration: none;
-  padding: 20px;
-}
-
-nav a span {
-  color: white;
-}
-
-mat-icon {
-  color: white;
-}
-
-.active a label {
-  color: #F44336;
-  background-color: white;
-}
-
-.active a span {
-  color: #F44336;
-  background-color: white;
 }

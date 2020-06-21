@@ -17,12 +17,6 @@ import { LoginComponent } from "./login/login.component";
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "/home/about-us",
-    pathMatch: "full",
-    // component: HomePageComponent,
-  },
-  {
     path: "login",
     component: LoginComponent,
   },
@@ -49,7 +43,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: "home",
+    path: "",
     component: HomePageComponent,
     children: [
       {
@@ -60,11 +54,13 @@ const routes: Routes = [
         path: "phone-number",
         component: BloodbankPhoneComponent,
       },
-      {
-        path: "eligibility",
-        component: EligibilityComponent,
-      },
     ],
+  },
+  {
+    path: "**",
+    redirectTo: "",
+    pathMatch: "full",
+    // component: HomePageComponent,
   },
 ];
 

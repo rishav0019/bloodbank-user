@@ -47,6 +47,8 @@ import { RequestBloodComponent } from "./dashboard/request-blood/request-blood.c
 import { SeeRequestComponent } from "./dashboard/see-request/see-request.component";
 import { FeedbackComponent } from "./dashboard/feedback/feedback.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { HeaderComponent } from "./header/header.component";
+import { FooterComponent } from "./footer/footer.component";
 // import { StarRatingModule } from "angular-star-rating";
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInOptions: [
@@ -78,6 +80,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     RequestBloodComponent,
     SeeRequestComponent,
     FeedbackComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     // StarRatingModule,
