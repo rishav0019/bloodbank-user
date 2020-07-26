@@ -1,16 +1,12 @@
-.heading {
-  text-align: center;
-  margin-top: 20px;
-}
-
 .card {
   margin-bottom: 8px;
   max-width: 100%;
 }
 
-// .example-card {
+.doner-container {
+  min-height: calc(100vh);
+}
 
-// }
 
 .header-image {
   text-align: center;
@@ -38,4 +34,14 @@ mat-card-actions {
   border-radius: 25px;
   padding: 8px;
   cursor: pointer;
+}
+
+.location-icon {
+  position: relative;
+  top: 7px;
+}
+
+.blood-group {
+  position: relative;
+  top: 3px;
 }

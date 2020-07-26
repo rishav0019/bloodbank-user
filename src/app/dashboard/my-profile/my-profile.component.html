@@ -1,10 +1,10 @@
 <div class="my-container">
   <div class="row">
-    <div class="col center">
+    <div class="col heading">
       <h3>My Profile</h3>
-      <hr>
     </div>
   </div>
+
   <form [formGroup]="profileUpdateForm" (ngSubmit)=" OnSubmit()" class="my-form">
     <div class="row">
       <div class="col-md-6">
@@ -131,7 +131,7 @@
     </div>
     <div class="row">
       <div class="col submit-button">
-        <button mat-button>Submit</button>
+        <button mat-raised-button>Save</button>
       </div>
     </div>
   </form>

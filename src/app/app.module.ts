@@ -1,5 +1,4 @@
 import { RouterModule } from "@angular/router";
-
 import { environment } from "./../environments/environment.prod";
 import { SharedModule } from "./shared/shared.module";
 import { BrowserModule } from "@angular/platform-browser";
@@ -23,7 +22,6 @@ import { FirebaseUIModule, firebase, firebaseui } from "firebaseui-angular";
 import { LoginComponent } from "./login/login.component";
 import { MatCardModule } from "@angular/material/card";
 import { MatBadgeModule } from "@angular/material/badge";
-
 import {
   MatDialogModule,
   MatDialogRef,
@@ -40,8 +38,8 @@ import { MyProfileComponent } from "./dashboard/my-profile/my-profile.component"
 import { MatRadioModule } from "@angular/material/radio";
 import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 import { MatExpansionModule } from "@angular/material/expansion";
-
-import { MatNativeDateModule, MatButtonModule } from "@angular/material";
+import { MatButtonModule } from "@angular/material/button";
+import { MatNativeDateModule } from "@angular/material/core";
 import { DonersComponent } from "./dashboard/doners/doners.component";
 import { RequestBloodComponent } from "./dashboard/request-blood/request-blood.component";
 import { SeeRequestComponent } from "./dashboard/see-request/see-request.component";
@@ -49,7 +47,11 @@ import { FeedbackComponent } from "./dashboard/feedback/feedback.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
-import { NgxAuthFirebaseUIModule } from "ngx-auth-firebaseui";
+import { LandingComponent } from "./home/landing/landing.component";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { UpcomingEventsComponent } from './home/upcoming-events/upcoming-events.component';
+import { GalleryComponent } from './home/gallery/gallery.component';
+
 // import { StarRatingModule } from "angular-star-rating";
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -66,6 +68,24 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   credentialHelper: firebaseui.auth.CredentialHelper.NONE,
   signInFlow: "popup",
 };
+
+const MaterialComponents = [
+  MatPaginatorModule,
+  MatButtonModule,
+  MatToolbarModule,
+  MatExpansionModule,
+  MatSlideToggleModule,
+  MatNativeDateModule,
+  MatDatepickerModule,
+  MatSelectModule,
+  MatBadgeModule,
+  MatIconModule,
+  MatCardModule,
+  MatGridListModule,
+  MatRadioModule,
+  MatTableModule,
+  MatFormFieldModule,
+];
 
 @NgModule({
   declarations: [
@@ -84,36 +104,25 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     FeedbackComponent,
     HeaderComponent,
     FooterComponent,
+    LandingComponent,
+    UpcomingEventsComponent,
+    GalleryComponent,
   ],
   imports: [
     // StarRatingModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatExpansionModule,
-    MatSlideToggleModule,
-    MatNativeDateModule,
-    MatDatepickerModule,
-    MatRadioModule,
+    MaterialComponents,
     ReactiveFormsModule,
-    MatSelectModule,
-    MatBadgeModule,
-    MatIconModule,
-    MatCardModule,
-    MatGridListModule,
     MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    MatFormFieldModule,
     FormsModule,
-    MatTableModule,
     NgImageSliderModule,
     MatTabsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
-    NgxAuthFirebaseUIModule.forRoot(environment.firebase),
   ],
   providers: [
     { provide: MAT_DIALOG_DATA, useValue: {} },

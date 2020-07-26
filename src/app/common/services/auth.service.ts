@@ -1,32 +1,30 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { auth, User } from "firebase";
-import { Observable } from "rxjs";
-import { CanActivate } from "@angular/router";
+import { Observable, of } from "rxjs";
+import { CanActivate, Router } from "@angular/router";
+import { switchMap } from "rxjs/internal/operators/switchMap";
 
 @Injectable({
   providedIn: "root",
 })
 export class AuthService {
-  user: Observable<User>;
-  isloggedIn: boolean;
-  constructor(private afAuth: AngularFireAuth) {
-    this.isloggedIn = false;
+  user: Observable<boolean>;
+
+  constructor(private afAuth: AngularFireAuth, private router: Router) {
+    this.user = this.afAuth.authState.pipe(
+      switchMap((user) => {
+        if (user) {
+          return of(true);
+        } else {
+          return of(false);
+        }
+      })
+    );
   }
 
-  login(email, password) {
-    auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((firebaseUser) => {
-        if (firebaseUser) {
-          this.isloggedIn = true;
-          console.log("Login Success", firebaseUser.user);
-        } else {
-          this.isloggedIn = false;
-        }
-      });
-  }
-  isUserLoggedIn(): boolean {
-    return this.isloggedIn;
+  async logout() {
+    await this.afAuth.auth.signOut();
+    return this.router.navigate(["/"]);
   }
 }

@@ -13,6 +13,10 @@ import { HomePageComponent } from "./home/home-page.component";
 import { AboutUsComponent } from "./home/about-us/about-us.component";
 import { BloodbankPhoneComponent } from "./home/bloodbank-phone/bloodbank-phone.component";
 import { LoginComponent } from "./login/login.component";
+import { LandingComponent } from "./home/landing/landing.component";
+import { AuthGuard } from "./auth.guard";
+import { UpcomingEventsComponent } from "./home/upcoming-events/upcoming-events.component";
+import { GalleryComponent } from "./home/gallery/gallery.component";
 // import { LoginComponent } from "./login/login.component";
 
 const routes: Routes = [
@@ -23,6 +27,7 @@ const routes: Routes = [
   {
     path: "dashboard",
     component: DashboardComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: "my-profile",
@@ -42,25 +47,32 @@ const routes: Routes = [
       },
     ],
   },
+  { path: "", redirectTo: "/home", pathMatch: "full" },
   {
-    path: "",
-    component: HomePageComponent,
-    children: [
-      {
-        path: "about-us",
-        component: AboutUsComponent,
-      },
-      {
-        path: "phone-number",
-        component: BloodbankPhoneComponent,
-      },
-    ],
+    path: "home",
+    component: LandingComponent,
+  },
+  {
+    path: "about-us",
+    component: AboutUsComponent,
+  },
+  {
+    path: "phone-number",
+    component: BloodbankPhoneComponent,
+  },
+  {
+    path: "upcoming-events",
+    component: UpcomingEventsComponent,
+  },
+  {
+    path: "gallery",
+    component: GalleryComponent,
   },
   {
     path: "**",
-    redirectTo: "",
+    redirectTo: "/home",
     pathMatch: "full",
-    // component: HomePageComponent,
+    // component: LandingComponent,
   },
 ];
 

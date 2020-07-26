@@ -1,7 +1,5 @@
 .my-form {
   margin: 0 auto;
-  // background-color: red($color: #000000);
-  // background-color: green($color: #000000);
   padding: 64px;
 }
 
@@ -37,4 +35,9 @@ mat-radio-button {
 
 .center {
   text-align: center;
+}
+
+.submit-button button {
+  background-color: #ef5350;
+  color: #fff;
 }

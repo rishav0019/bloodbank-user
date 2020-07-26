@@ -1,89 +1,62 @@
 <div class="doner-container">
   <div class="row">
     <div class="col heading">
-      <h3>Requests </h3>
+      <h3>Requests</h3>
     </div>
-
   </div>
-  <hr>
+
   <div class="row">
-    <div class="col-md-3">
 
-    </div>
-    <div class="col-md-6">
-      <mat-card class="example-card" *ngFor="let request of requests">
+    <div class="col-md-6" *ngFor="let request of requests">
+      <mat-card class="example-card">
         <mat-card-header>
-          <!-- <mat-card-title>
 
-          </mat-card-title> -->
           <mat-card-subtitle>
-            <label> Patient Name: <span class="description">
-                {{request.patientName}}, {{request.patientAge}}, {{request.gender}}</span></label>
-            <label> Blood Required : <span class="description bloodgroup"> O+</span></label>
+            <div class="row">
+              <div class="col-3">
+                <ul>
+                  <li> <label> Patient Name:</label></li>
+                  <li> <label> Blood Required:</label></li>
+                  <li> <label> Contact Person:</label></li>
+                  <li> <label> Requested Date:</label></li>
+                  <li> <label> Address:</label></li>
+                  <li> <label> Poster Name:</label></li>
+                  <li> <label> Poster Mail:</label></li>
+                </ul>
+              </div>
+              <div class="col-9">
+                <ul>
+                  <li><span class="description">{{request.patientName}}, {{request.patientAge}},
+                      {{request.gender}}</span></li>
+                  <li><span class="description">{{request.patientName}}</span></li>
+                  <li><span class="description">{{request.contactPersonName}}</span></li>
+                  <li><span class="description">{{request.creationDate.toDate()  | date:'MM-dd-yyyy'}}</span></li>
+                  <li><span class="description">{{request.address}}</span></li>
+                  <li><span class="description">{{request.initiatorUserName}}</span></li>
+                  <li><span class="description">{{request.initiatorMailId}}</span></li>
 
-            <!-- <span>  </span> -->
-            <label> Contact Person : <span class="description">{{request.contactPersonName}}</span></label>
-
-            <label> Requested Date : <span
-                class="description">{{request.creationDate.toDate()  | date:'MM-dd-yyyy'}}</span></label>
-            <label> Address : <span class="description"> {{request.address}} </span></label>
+                </ul>
+              </div>
+            </div>
           </mat-card-subtitle>
+
         </mat-card-header>
-
-        <div class="row">
-          <div class="col-sm-1">
-            <div mat-card-avatar class="example-header-image"></div>
-
-          </div>
-          <div class="col-sm-11">
-            <span class="details">{{request.initiatorUserName}}</span>
-            <span class="details">{{request.initiatorMailId}}</span>
-
-          </div>
-          <div class="col-sm-10">
-            <mat-form-field class="full-width">
-              <mat-label>Leave a comment</mat-label>
-              <textarea matInput></textarea>
-            </mat-form-field>
-
-          </div>
-          <div class="col-sm-2">
-            <button mat-raised-button color="warn">Warn</button>
-
-          </div>
-
-        </div>
 
         <mat-accordion class="example-headers-align" collapsedHeight="56px">
           <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
-
               <mat-panel-description>
-
-
-                <mat-icon matBadge="15" matBadgeColor="warn">message</mat-icon>
+                <mat-icon>message</mat-icon>
                 <label class="comment">Comments</label>
               </mat-panel-description>
             </mat-expansion-panel-header>
             <label>Reason: Road accident</label>
-
-
-
-
           </mat-expansion-panel>
-
-
-
-
-
         </mat-accordion>
 
 
+
       </mat-card>
-
-    </div>
-    <div class="col-md-3">
-
     </div>
   </div>
 </div>

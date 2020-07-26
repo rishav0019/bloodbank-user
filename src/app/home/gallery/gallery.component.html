@@ -1,0 +1,36 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col heading">
+      <h3>Gallery</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <ng-image-slider [images]="galleryImageObject" [imagePopup]="true" [imageSize]="{  width: '50%', height: 400 }"
+        [infinite]="true" [autoSlide]="2" [slideImage]="1" [animationSpeed]="10" #nav>
+      </ng-image-slider>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col heading">
+      <h5>More Events</h5>
+    </div>
+  </div>
+
+  <div class="image-list-container">
+    <ng-container *ngFor="let image of donationCampGalleryImageObject">
+      <div class="image-container">
+        <img [src]="image.image" alt="image.alt">
+      </div>
+      <div class="image-container">
+        <img [src]="image.image" alt="image.alt">
+      </div>
+    </ng-container>
+  </div>
+
+
+</div>

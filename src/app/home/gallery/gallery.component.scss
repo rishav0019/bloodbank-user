@@ -1,0 +1,25 @@
+.image-list-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  padding-bottom: 4rem;
+
+  .image-container {
+    margin: 0.5rem;
+
+
+    img {
+      width: 340px;
+      height: 250px;
+      object-fit: cover;
+      border: 1px solid #ed6865;
+    }
+
+    img:hover {
+      border: 1px solid #e53935;
+    }
+  }
+}
+
+.heading h5 {
+  text-decoration: underline;
+}

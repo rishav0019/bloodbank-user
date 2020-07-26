@@ -9,6 +9,7 @@
         <img src="../../../assets/image/logo.png" alt="Blood Bank" />
       </a>
     </div>
+
     <div class="col-xl-6">
 
       <nav class="main-nav">
@@ -20,10 +21,10 @@
             <a [href]="['/phone-number']">Bloodbank Numbers</a>
           </li>
           <li class="main-nav__item">
-            <a [href]="['/about-us']">Upcoming Events</a>
+            <a [href]="['/upcoming-events']">Upcoming Events</a>
           </li>
           <li class="main-nav__item">
-            <a [href]="['/about-us']">Gallery</a>
+            <a [href]="['/gallery']">Gallery</a>
           </li>
           <li class="main-nav__item">
             <a [href]="['/about-us']">Contact us</a>
@@ -37,12 +38,15 @@
     <div class="col-xl-3">
       <nav class="main-nav">
         <ul class="main-nav__items">
-          <li class="main-nav__item main-nav__item--cta">
-            <a (click)="login()" routerLinkActive="active-route">Donor Login </a>
+          <li class="main-nav__item main-nav__item--cta" *ngIf="!isLoggedIn">
+            <a (click)="login()" [routerLink]="'/login'" routerLinkActive="active-route">Donor Login </a>
           </li>
-          <li class="main-nav__item main-nav__item--cta">
+          <li class="main-nav__item main-nav__item--cta" *ngIf="isLoggedIn">
             <a [routerLink]="'/dashboard/doners'" routerLinkActive="active-route">Dashboard
             </a>
+          </li>
+          <li class="main-nav__item main-nav__item--cta" *ngIf="isLoggedIn">
+            <a (click)="logout()">Logout</a>
           </li>
         </ul>
 

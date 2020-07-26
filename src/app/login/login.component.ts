@@ -1,7 +1,5 @@
 import { Component, OnInit, Inject } from "@angular/core";
-
 import * as firebaseui from "firebaseui";
-
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Router } from "@angular/router";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
@@ -37,11 +35,11 @@ export class LoginComponent implements OnInit {
       phoneNumber: user.phoneNumber ? user.phoneNumber : " ",
     };
     this.accountService.setAccount(account).then(() => {
-      console.log("111111111111111111111111111111111");
-
       this.dialogRef.close(null);
       window.location.reload();
     });
+
+    return this.router.navigate(["/dashboard/doners"]);
   }
 
   onNoClick(): void {

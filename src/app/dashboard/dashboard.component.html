@@ -4,34 +4,6 @@
     <nav mat-tab-nav-bar>
       <a mat-tab-link *ngFor="let link of links" routerLink={{link.link}} (click)="activeLink = link.name"
         [active]="activeLink == link.name"> {{link.name}} </a>
-
-
-      <!--
-      <a mat-tab-link routerLink="doners" [active]="true">
-        <mat-icon>group</mat-icon>
-        <span matBadgeOverlap="false">Doners
-        </span>
-      </a>
-
-      <a mat-tab-link routerLink="requests">
-        <mat-icon>invert_colors</mat-icon>
-        <span matBadgeColor="warn" matBadgeOverlap="false">Requests
-        </span>
-      </a>
-
-      <a mat-tab-link routerLink="doners">
-        <mat-icon>invert_colors</mat-icon>
-        <span matBadgeColor="warn" matBadgeOverlap="false">My Donation History
-        </span>
-
-      </a>
-
-      <a mat-tab-link routerLink="my-profile">
-        <mat-icon>group</mat-icon>
-        <span matBadgeColor="warn" matBadgeOverlap="false">Profile
-        </span>
-
-      </a> -->
     </nav>
   </div>
 
