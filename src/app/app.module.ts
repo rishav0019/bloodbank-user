@@ -49,7 +49,9 @@ import { FeedbackComponent } from "./dashboard/feedback/feedback.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
+import { NgxAuthFirebaseUIModule } from "ngx-auth-firebaseui";
 // import { StarRatingModule } from "angular-star-rating";
+
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -111,6 +113,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    NgxAuthFirebaseUIModule.forRoot(environment.firebase),
   ],
   providers: [
     { provide: MAT_DIALOG_DATA, useValue: {} },
